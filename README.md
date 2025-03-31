@@ -37,7 +37,7 @@ Place these files into your `data/raw/` directory before running the notebooks.
 |      Step          |      Notebook File                 |        Input File                     |          Output File                       |
 |--------------------|------------------------------------|---------------------------------------|--------------------------------------------|
 | 1. Preprocessing   | `0)Data_preprocessing.ipynb`       | 'All 3 CSVs listed above              | `.\cleaned_reviews.csv`                    |
-| 2. Classification  | `1)Review_Classification.ipynb`    | `.\cleaned_reviews.csv`               | `.\cleaned_reviews_with_sentiment.csv"     |
+| 2. Classification  | `1)Review_Classification.ipynb`    | `.\cleaned_reviews.csv`               | `.\cleaned_reviews_with_sentiment.csv`     |
 | 3. Clustering      | `2)CategoryClustering.ipynb`       | `.\reviews_with_sentiment.csv`        | `.\full_reviews_with_clusters.csv`         |
 ---
 
