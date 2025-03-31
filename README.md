@@ -20,8 +20,6 @@ We classify, cluster, and summarize reviews to deliver clear, data-driven sugges
   - Fine-tuning **mistralai/Mistral-7B-v0.3** with prompt engineering for summarization.  
 - **Evaluation metrics**: accuracy, precision, recall, F1-score, R² score, elbow method, silhouette score.
 
-![12121](ro.png) Aqui otra foto!
-
 ---
 
 ##  Dataset
