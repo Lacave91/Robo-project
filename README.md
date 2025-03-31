@@ -24,8 +24,21 @@ We classify, cluster, and summarize reviews to deliver clear, data-driven sugges
 
 ##  Dataset
 
-- [**Primary Dataset: Amazon Product Reviews**](https://www.kaggle.com/datasets/datafiniti/consumer-reviews-of-amazon-products)
+- [**Original dataset**: Amazon Product Reviews**](https://www.kaggle.com/datasets/datafiniti/consumer-reviews-of-amazon-products)
 
+These datasets were manually downloaded and combined during the preprocessing step:
+
+1. `.\Dataset\1429_1.csv`  
+2. `.\Dataset\Datafiniti_Amazon_Consumer_Reviews_of_Amazon_Products.csv`  
+3. `.\Dataset\Datafiniti_Amazon_Consumer_Reviews_of_Amazon_Products_May19.csv`  
+
+Place these files into your `data/raw/` directory before running the notebooks.
+##  Data Pipeline
+|      Step          |      Notebook File                 |        Input File                     |          Output File                       |
+|--------------------|------------------------------------|---------------------------------------|--------------------------------------------|
+| 1. Preprocessing   | `0)Data_preprocessing.ipynb`       | 'All 3 CSVs listed above              | `.\cleaned_reviews.csv`                    |
+| 2. Classification  | `1)Review_Classification.ipynb`    | `.\cleaned_reviews.csv`               | `.\cleaned_reviews_with_sentiment.csv"     |
+| 3. Clustering      | `2)CategoryClustering.ipynb`       | `.\reviews_with_sentiment.csv`        | `.\full_reviews_with_clusters.csv`         |
 ---
 
 ## Deployment
