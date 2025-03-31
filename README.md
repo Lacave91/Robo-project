@@ -8,7 +8,7 @@ We classify, cluster, and summarize reviews to deliver clear, data-driven sugges
 
 [👉 Task Descriptions and Instructions](https://github.com/ironhack-labs/project-nlp-business-case-automated-customers-reviews-v2)
 
-![images/robo - project.png](robo-project.png)
+![images/robo - project.png](images\robo-project.png)
 
 ---
 ##  Features
