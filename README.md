@@ -18,7 +18,7 @@ We classify, cluster, and summarize reviews to deliver clear, data-driven sugges
   - Using **DistilBERT-base-uncased** and **all-MiniLM-L6-v2** (SentenceTransformers) for embeddings and classification.  
   - Applying **K-Means** for product category clustering.  
   - Fine-tuning **mistralai/Mistral-7B-v0.3** with prompt engineering for summarization.  
-- **Evaluation metrics**: accuracy, precision, recall, F1-score, R² score, elbow method, silhouette score.
+- **Evaluation metrics**: accuracy, precision, recall, F1-score, elbow method, silhouette score.
 
 ---
 
