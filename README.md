@@ -17,12 +17,12 @@ We classify, cluster, and summarize reviews to deliver clear, data-driven sugges
 - **Model training**:  
   - Using **DistilBERT-base-uncased** and **all-MiniLM-L6-v2** (SentenceTransformers) for embeddings and classification.  
   - Applying **K-Means** for product category clustering.  
-  - Fine-tuning **mistralai/Mistral-7B-v0.3** with prompt engineering for summarization.  
+  - Fine-tuning **GPT-4-** with prompt engineering for summarization.  
 - **Evaluation metrics**: accuracy, precision, recall, F1-score, elbow method, silhouette score.
 
 ---
 
-##  Dataset
+## 📁  Dataset
 
 - [**Original dataset**: Amazon Product Reviews**](https://www.kaggle.com/datasets/datafiniti/consumer-reviews-of-amazon-products)
 
@@ -32,13 +32,36 @@ These datasets were manually downloaded and combined during the preprocessing st
 2. `.\Dataset\Datafiniti_Amazon_Consumer_Reviews_of_Amazon_Products.csv`  
 3. `.\Dataset\Datafiniti_Amazon_Consumer_Reviews_of_Amazon_Products_May19.csv`  
 
-Place these files into your `data/raw/` directory before running the notebooks.
+---
+
 ##  Data Pipeline
-|      Step          |      Notebook File                 |        Input File                     |          Output File                       |
-|--------------------|------------------------------------|---------------------------------------|--------------------------------------------|
-| 1. Preprocessing   | `0)Data_preprocessing.ipynb`       | 'All 3 CSVs listed above              | `.\cleaned_reviews.csv`                    |
-| 2. Classification  | `1)Review_Classification.ipynb`    | `.\cleaned_reviews.csv`               | `.\cleaned_reviews_with_sentiment.csv`     |
-| 3. Clustering      | `2)CategoryClustering.ipynb`       | `.\reviews_with_sentiment.csv`        | `.\full_reviews_with_clusters.csv`         |
+
+Raw CSV Files (Amazon Reviews)
+       │
+       ▼
+       
+ 0) Data Preprocessing
+     Input:  Raw CSVs
+     Output: cleaned_reviews.csv
+       │
+       ▼
+
+ 1) Review Classification
+     Input:  cleaned_reviews.csv
+     Output: cleaned_reviews_with_sentiment.csv
+       │
+       ▼
+
+ 2) Category Clustering
+     Input:  cleaned_reviews_with_sentiment.csv
+     Output: full_reviews_with_clusters.csv
+       │
+       ▼
+
+ 3) Review Summarization + Visualization
+     Input:  full_reviews_with_clusters.csv
+     Output: GPT-4 summaries (.md files), charts
+
 ---
 
 ## Deployment
