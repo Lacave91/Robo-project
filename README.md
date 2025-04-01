@@ -64,7 +64,12 @@ Raw CSV Files (Amazon Reviews)
 
 ---
 
-## Deployment
+## Deployment 
+
+https://huggingface.co/spaces/lacvel5/Robo-project
+https://a80353e73b87314a41.gradio.live/
+![images/robo - project.png](images/deploy_robo.png)
+
 
 ---
 
