@@ -7,11 +7,9 @@ import re
 # === Load Data ===
 @st.cache_data
 def load_data():
-    script_dir = os.path.dirname(__file__)  # Get folder where app.py is
+    df = pd.read_csv(os.path.join("Deployment", "full_reviews_with_clusters.csv"))
 
-    df = pd.read_csv(os.path.join(script_dir, "full_reviews_with_clusters.csv"))
-
-    summaries_path = os.path.join(script_dir, "summaries_clean")
+    summaries_path = os.path.join("Deployment", "summaries_clean")
     summary_files = {
         file.replace("_summary.md", "").replace("_", " ").title(): os.path.join(summaries_path, file)
         for file in os.listdir(summaries_path) if file.endswith(".md")
@@ -70,7 +68,7 @@ st.dataframe(top_products.tail(1).reset_index(drop=True))
 st.subheader("📝 Summary Article")
 summary_key = selected_category.lower().replace(" ", "_").replace("&", "and").replace("(", "").replace(")", "")
 summary_filename = f"{summary_key}_summary.md"
-summary_path = os.path.join("summaries_clean", summary_filename)
+summary_path = os.path.join("Deployment", "summaries_clean", summary_filename)
 
 if os.path.exists(summary_path):
     with open(summary_path, "r", encoding="utf-8") as f:
@@ -78,9 +76,7 @@ if os.path.exists(summary_path):
 
     # 🔧 Auto-fix: Add heading to worst-rated section if missing
     if "worst-rated" in summary_text.lower() and "## " not in summary_text.lower().split("worst-rated")[1][:100]:
-        # Extract worst product name from last table row
         worst_product_name = top_products.tail(1)["clean_name"].values[0].replace("-", " ").title()
-        # Inject heading just before the worst-rated paragraph
         summary_text = summary_text.replace(
             "For users seeking the worst-rated",
             f"## ⚠️ Worst Rated Product: {worst_product_name}\n\nFor users seeking the worst-rated"
