@@ -9,7 +9,7 @@ import re
 def load_data():
     df = pd.read_csv(os.path.join("Deployment", "full_reviews_with_clusters.csv"))
 
-    summary_path = os.path.join("summaries_clean", summary_filename)
+    summary_path = os.path.join("Deployment", "summaries_clean", summary_filename)
     summary_files = {
         file.replace("_summary.md", "").replace("_", " ").title(): os.path.join(summaries_path, file)
         for file in os.listdir(summaries_path) if file.endswith(".md")
