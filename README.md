@@ -1,25 +1,18 @@
 # **Robo-project** 🤖  
 Stop drowning in endless reviews — this model finds the best product for you!  
 
-This project leverages NLP and generative AI to transform scattered Amazon reviews into actionable product recommendations.  
-We classify, cluster, and summarize reviews to deliver clear, data-driven suggestions — no more review overload.
+A complete Product Review Intelligence Dashboard powered by NLP and generative AI. This project showcases a real-world system capable of aggregating, organizing, and summarizing customer feedback from e-commerce platforms.
 
-
+🧠 Built during my AI bootcamp to demonstrate end-to-end application of NLP, machine learning, and interactive data apps — ideal for product teams, marketing analysts, or data-driven decision-makers.
 
 [👉 Task Descriptions and Instructions](https://github.com/ironhack-labs/project-nlp-business-case-automated-customers-reviews-v2)
+
+🔗 Live Demo: [Streamlit App](https://robo-project-jfrvqubawim2qttpxtckey.streamlit.app/)
+
 
 
 <img src="images/robo-project.png" alt="Robo-project" width="500"/>
 
----
-##  Features
-
-- **Data evaluation**: cleaning and preprocessing text data to optimize model performance.  
-- **Model training**:  
-  - Using **DistilBERT-base-uncased** and **all-MiniLM-L6-v2** (SentenceTransformers) for embeddings and classification.  
-  - Applying **K-Means** for product category clustering.  
-  - Fine-tuning **GPT-4-** with prompt engineering for summarization.  
-- **Evaluation metrics**: accuracy, precision, recall, F1-score, elbow method, silhouette score.
 
 ---
 
@@ -35,53 +28,44 @@ These datasets were manually downloaded and combined during the preprocessing st
 
 ---
 
-##  Data Pipeline
+ ## 🚀 What It Does 
+The system processes a large dataset of Amazon product reviews and turns raw user feedback into structured insights using a 3-step NLP pipeline:
 
-Raw CSV Files (Amazon Reviews)
-       │
-       ▼
-       
- 0) Data Preprocessing
-     Input:  Raw CSVs
-     Output: cleaned_reviews.csv
-       │
-       ▼
+1. 🧾 Review Classification
+Assigns sentiment labels (positive, neutral, negative) to each review using rule-based and/or ML-based sentiment analysis.
 
- 1) Review Classification
-     Input:  cleaned_reviews.csv
-     Output: cleaned_reviews_with_sentiment.csv
-       │
-       ▼
+Displays sentiment distribution by category.
 
- 2) Category Clustering
-     Input:  cleaned_reviews_with_sentiment.csv
-     Output: full_reviews_with_clusters.csv
-       │
-       ▼
+2. 🧠 Clustering Product Categories
+Groups products into coherent clusters (e.g., Tablets, Batteries, E-Readers) using unsupervised techniques like TF-IDF + KMeans.
 
- 3) Review Summarization + Visualization
-     Input:  full_reviews_with_clusters.csv
-     Output: GPT-4 summaries (.md files), charts
+Automatically normalizes product names (removes colors, models, etc.) for aggregation.
 
----
+3. ✍️ Generative Summarization
+Uses GPT-3.5 to synthesize product review summaries into human-readable articles.
 
-## Deployment 
+Highlights:
 
-https://huggingface.co/spaces/lacvel5/Robo-project
+Top 3 products per category (with pros & cons)
 
-https://a80353e73b87314a41.gradio.live/
-![images/robo - project.png](images/deploy_robo.png)
+Worst-rated product (and what went wrong)
+
+All summaries are stored as markdown files and dynamically displayed in the web app.
 
 
 ---
 
-##  Installation
+## ⚙️ How to Run Locally
 
-Use `requirements.txt` to install the required packages. We recommend using a virtual environment.
 
 ```bash
-python -m venv .venv
-.venv/Scripts/activate  # On Windows
-source .venv/bin/activate  # On macOS/Linux
+# 1. Clone the repo
+git clone https://github.com/Lacave91/Robo-project.git
+cd robo-project
+
+# 2. Install dependencies
 pip install -r requirements.txt
+
+# 3. Launch app
+streamlit run Deployment/app.py
 ```
