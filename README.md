@@ -3,7 +3,7 @@
 
 Stop drowning in endless reviews — this model finds the best product for you!  
 
-A complete Product Review Intelligence Dashboard powered by NLP and generative AI. This project showcases a real-world system capable of aggregating, organizing, and summarizing customer feedback from e-commerce platforms.
+A complete **Product Review Intelligence** Dashboard powered by NLP and generative AI. This project showcases a real-world system capable of aggregating, organizing, and summarizing customer feedback from e-commerce platforms.
 
  Built during my AI bootcamp to demonstrate end-to-end application of NLP, machine learning, and interactive data apps — ideal for product teams, marketing analysts, or data-driven decision-makers.
 
