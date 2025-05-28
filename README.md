@@ -81,3 +81,5 @@ pip install -r requirements.txt
 # 3. Launch app
 streamlit run Deployment/app.py
 ```
+
+<img src="images/screenshot_deploy.png" alt="Robo-project" width="1000"/>
