@@ -40,17 +40,17 @@ These datasets were manually downloaded and combined during the preprocessing st
  ## 🚀 What It Does 
 The system processes a large dataset of Amazon product reviews and turns raw user feedback into structured insights using a 3-step NLP pipeline:
 
-1. 🧾 Review Classification
+**1. 🧾 Review Classification**
 Assigns sentiment labels (positive, neutral, negative) to each review using rule-based and/or ML-based sentiment analysis.
 
 Displays sentiment distribution by category.
 
-2. 🧠 Clustering Product Categories
+**2. 🧠 Clustering Product Categories**
 Groups products into coherent clusters (e.g., Tablets, Batteries, E-Readers) using unsupervised techniques like TF-IDF + KMeans.
 
 Automatically normalizes product names (removes colors, models, etc.) for aggregation.
 
-3. ✍️ Generative Summarization
+**3. ✍️ Generative Summarization**
 Uses GPT-3.5 to synthesize product review summaries into human-readable articles.
 
 Highlights:
